@@ -9,6 +9,8 @@ import { route } from '@/routes'
 import VehiclesList from '@/views/vehicles/VehiclesList'
 
 import axios from "axios";
+
+import Login from '@/views/auth/Login'
  
 window.axios = axios;
  
@@ -23,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path={ route('home') } element={<App />}>
           <Route index element={<Home />} />
           <Route path={ route('register') } element={<Register />} />
+          <Route path={ route('login') } element={<Login />} />
           <Route path={ route('vehicles.index') } element={<VehiclesList />} />
         </Route>
       </Routes>
