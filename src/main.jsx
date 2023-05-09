@@ -8,6 +8,7 @@ import '@/assets/main.css'
 import { route } from '@/routes'
 import VehiclesList from '@/views/vehicles/VehiclesList'
 import CreateVehicle from '@/views/vehicles/CreateVehicle'
+import EditVehicle from '@/views/vehicles/EditVehicle'
 import ActiveParkings from '@/views/parkings/ActiveParkings'
 import EditProfile from '@/views/profile/EditProfile'
 import ChangePassword from '@/views/profile/ChangePassword'
@@ -34,6 +35,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path={ route('profile.change-password') } element={<ChangePassword />} />
           <Route path={ route('vehicles.index') } element={<VehiclesList />} />
           <Route path={ route('vehicles.create') } element={<CreateVehicle />} />
+          <Route path={ route('vehicles.edit') } element={<EditVehicle />} />
           <Route path={ route('parkings.active') } element={<ActiveParkings />} />
         </Route>
       </Routes>
