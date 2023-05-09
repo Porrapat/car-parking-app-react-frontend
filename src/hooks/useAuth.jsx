@@ -34,6 +34,23 @@ export function useAuth() {
       })
       .finally(() => setLoading(false))
   }
+
+  async function login(data) {
+    setErrors({})
+    setLoading(true)
+   
+    return axios.post('/auth/login', data)
+      .then(response => {
+        setAccessToken(response.data.access_token)
+        navigate(route('parkings.active'))
+      })
+      .catch(error => {
+        if (error.response.status === 422) {
+          setErrors(error.response.data.errors)
+        }
+      })
+      .finally(() => setLoading(false))
+  }
  
   async function logout(force = false) {
     if (!force) {
@@ -44,5 +61,5 @@ export function useAuth() {
     navigate(route('login'))
   }
  
-  return { register, errors, loading, isLoggedIn, logout }
+  return { register, login, errors, loading, isLoggedIn, logout }
 }

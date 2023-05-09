@@ -7,6 +7,8 @@ import Register from '@/views/auth/Register'
 import '@/assets/main.css'
 import { route } from '@/routes'
 import VehiclesList from '@/views/vehicles/VehiclesList'
+import ActiveParkings from '@/views/parkings/ActiveParkings'
+import EditProfile from '@/views/profiles/EditProfile'
 
 import axios from "axios";
 
@@ -26,7 +28,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route index element={<Home />} />
           <Route path={ route('register') } element={<Register />} />
           <Route path={ route('login') } element={<Login />} />
+          <Route path={ route('profile.edit') } element={<EditProfile />} />
           <Route path={ route('vehicles.index') } element={<VehiclesList />} />
+          <Route path={ route('parkings.active') } element={<ActiveParkings />} />
         </Route>
       </Routes>
     </BrowserRouter>
