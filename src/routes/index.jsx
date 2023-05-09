@@ -10,6 +10,7 @@ const routeNames = {
   'parkings.active': '/parkings/active',
   'parkings.create': '/parkings/new',
   'parkings.history': '/parkings/history',
+  'parkings.show': '/parkings/:id',
 }
   
 function route(name, params = {}) {

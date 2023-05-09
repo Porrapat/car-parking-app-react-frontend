@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
- 
+import { Link } from 'react-router-dom'
+import { route } from '@/routes'
+
 function ParkingHistory() {
   const [parkings, setParkings] = useState([])
  
@@ -47,12 +49,11 @@ function ParkingHistory() {
               </span>
               <span className="pt-0.5">&nbsp;&euro;</span>
             </div>
-            <button
-              type="button"
-              className="btn btn-secondary uppercase"
-            >
+            <Link
+              to={ route('parkings.show', { id: parking.id }) }
+              className="btn btn-secondary uppercase">
               view details
-            </button>
+            </Link>
           </div>
         })}
       </div>
